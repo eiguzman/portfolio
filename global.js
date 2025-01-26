@@ -26,7 +26,7 @@ for (let p of pages) {
     }
     let a = document.createElement('a');
     a.href = url;
-    a.textContent = displayUrl; // Use displayUrl for the text content
+    a.textContent = displayUrl;
     nav.append(a);
     a.classList.toggle(
         'current',
