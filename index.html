@@ -16,8 +16,8 @@
         <a href="https://eiguzman.github.io/portfolio/contact/cv.html">CV</a>
     </nav>
 
-    <script>
-        let navLinks = $$( 'nav a' );
+    <script type="module">
+        let navLinks = $$('nav a');
         let currentLink = navLinks.find(
             (a) => a.host === location.host && a.pathname === location.pathname
         );
