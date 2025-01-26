@@ -6,7 +6,7 @@ let pages = [
     { url: 'https://eiguzman.github.io/portfolio/', title: 'Home'},
     { url: 'portfolio/projects/index.html', title: 'Projects'},
     { url: 'portfolio/contact/index.html', title: 'Contact'},
-    { url: 'https://eiguzman.github.com', title: 'GitHub'},
+    { url: 'https://github.com/eiguzman', title: 'GitHub'},
     { url: 'portfolio/contact/cv.html', title: 'CV'},
 ];
 
