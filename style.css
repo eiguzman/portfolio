@@ -7,9 +7,19 @@ body{
 nav{
   display:contents;
   display: flex;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200)
 }
 .current{
   flex: 1;
+  border-bottom-width: 0.4em;
+  border-bottom-color: oklch(85 5% 210);
 }
 .redir{
   flex: 1
