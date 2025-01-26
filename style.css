@@ -24,6 +24,8 @@ h3{
   text-wrap: balance;
 }
 nav{
+  --border-color: oklch(50% 10% 200 / 40%);
+  --border-curr-color: oklch(40% 40% 200 / 40%);
   display:contents;
   display: flex;}
 a{
@@ -35,12 +37,13 @@ a{
   margin-bottom: 10px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
 }
 a:hover{
   border-bottom-width: 0.4em;
   border-bottom-color: var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);}
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
 .current{
   flex: 1;
   border-bottom-width: 0.4em;

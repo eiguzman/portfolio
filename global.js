@@ -21,7 +21,7 @@ for (let p of pages) {
     let url = p.url;
     let title = p.title;
     if (!ARE_WE_HOME && !url.startsWith('http') && url.startsWith('portfolio')) {
-        url = './' + url;
+        url = '/' + url;
     } else if (!ARE_WE_HOME && !url.startsWith('http')) {
         url = '../' + url;
     }
