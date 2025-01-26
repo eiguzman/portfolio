@@ -29,9 +29,9 @@ for (let p of pages) {
     a.href = url;
     a.textContent = title;
     nav.append(a);
+    
+    a.classList.toggle(
+        'current',
+        a.host === location.host && a.pathname === location.pathname
+      );
   }
-
-  a.classList.toggle(
-    'current',
-    a.host === location.host && a.pathname === location.pathname
-  );
