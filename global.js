@@ -6,9 +6,10 @@ function $$(selector, context = document) {
 
 let pages = [
     { url: 'https://eiguzman.github.io/portfolio/', title: 'Home' },
-    { url: '../projects/index.html', title: 'Projects' },
-    { url: '../contact/index.html', title: 'Contact' },
-    { url: '../contact/cv.html', title: 'CV' },
+    { url: 'projects/index.html', title: 'Projects' },
+    { url: 'contact/index.html', title: 'Contact' },
+    { url: 'https://github.com/eiguzman', title: 'GitHub' },
+    { url: 'contact/cv.html', title: 'CV' },
   ];
 
 let nav = document.createElement('nav');
