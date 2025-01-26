@@ -20,6 +20,7 @@ body {
 
 nav {
   display: flex;
+  margin-top: 3rem;
 }
 
 a {
@@ -47,11 +48,12 @@ a:hover {
 }
 
 .theme-switcher {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
   font-size: .8rem;
   font-family: inherit;
+  z-index: 1000;
 }
 
 [data-theme='dark'] body {
