@@ -6,10 +6,10 @@ function $$(selector, context = document) {
 
 let pages = [
     { url: 'https://eiguzman.github.io/portfolio/', title: 'Home' },
-    { url: 'portfolio/projects/index.html', title: 'Projects' },
-    { url: 'portfolio/contact/index.html', title: 'Contact' },
+    { url: 'projects/index.html', title: 'Projects' },
+    { url: 'contact/index.html', title: 'Contact' },
     { url: 'https://github.com/eiguzman', title: 'GitHub' },
-    { url: 'portfolio/contact/cv.html', title: 'CV' },
+    { url: 'contact/cv.html', title: 'CV' },
   ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
