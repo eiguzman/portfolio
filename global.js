@@ -20,8 +20,11 @@ document.body.prepend(nav);
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
-    url = !ARE_WE_HOME && !url.startsWith('portfolio') ? url : url;
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+    if (!ARE_WE_HOME && !url.startsWith('http') && url.startsWith('portfolio')) {
+        url = './' + url;
+    } else if (!ARE_WE_HOME && !url.startsWith('http')) {
+        url = '../' + url;
+    }
     let a = document.createElement('a');
     a.href = url;
     a.textContent = title;
