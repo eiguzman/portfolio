@@ -28,3 +28,27 @@ a:hover{
   flex: 1;
   border-bottom-width: 0.4em;
   border-bottom-color: oklch(85% 5% 210);}
+form{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+label{
+  width: inherit;
+  display: block;
+  margin-block: 20px 20px;
+}
+input{
+  font: inherit;
+  width: inherit;
+}
+textarea{
+  font: inherit;
+  width: inherit;
+  margin-block-end: 20px;
+}
+button{
+  font: inherit;
+  width: inherit;
+}
