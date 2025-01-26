@@ -6,6 +6,21 @@ body{
   margin-inline: auto;
   padding-left: 30px;
   padding-right: 30px;}
+h1{
+  font-size: 4em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+h2{
+  font-size: 2em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+h3{
+  font-size: 1.5em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
 nav{
   display:contents;
   display: flex;}
@@ -49,4 +64,19 @@ button{
   display: grid;
   grid-template-columns: auto;
   grid-column: 1 / -1;
+}
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  & article{
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 1em;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  & h2{
+    margin: 0;
+  }
 }
