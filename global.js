@@ -12,6 +12,8 @@ let pages = [
     { url: 'portfolio/contact/cv.html', title: 'CV' },
   ];
 
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
+
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
