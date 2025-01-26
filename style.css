@@ -29,26 +29,24 @@ a:hover{
   border-bottom-width: 0.4em;
   border-bottom-color: oklch(85% 5% 210);}
 form{
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
 }
 label{
-  width: inherit;
-  display: block;
-  margin-block: 20px 20px;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
 }
 input{
   font: inherit;
-  width: inherit;
 }
 textarea{
   font: inherit;
-  width: inherit;
-  margin-block-end: 20px;
 }
 button{
   font: inherit;
-  width: inherit;
+  display: grid;
+  grid-template-columns: auto;
+  grid-column: 1 / -1;
 }
