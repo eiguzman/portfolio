@@ -1,5 +1,6 @@
 html {
   --color-accent: oklch(63% 0.16 145);
+  --color-accent-light-hover: oklch(63% 0.16 145 / 0.1); /* Light highlight color for light mode */
   accent-color: var(--color-accent);
   color-scheme: light dark;
   --border-color-light: oklch(50% 10% 200 / 40%);
@@ -12,46 +13,14 @@ body {
   position: relative;
   max-width: 100ch;
   margin-inline: auto;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0 30px;
   background-color: var(--background-color-light);
   color: black;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--background-color-dark);
-    color: white;
-  }
-}
-
-h1 {
-  font-size: 4em;
-  line-height: 1.1;
-  text-wrap: balance;
-}
-
-h2 {
-  font-size: 2em;
-  line-height: 1.1;
-  text-wrap: balance;
-}
-
-h3 {
-  font-size: 1.5em;
-  line-height: 1.1;
-  text-wrap: balance;
 }
 
 nav {
   display: flex;
   --border-color: var(--border-color-light);
-}
-
-@media (prefers-color-scheme: dark) {
-  nav {
-    --border-color: var(--border-color-dark);
-  }
 }
 
 a {
@@ -64,70 +33,12 @@ a {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--border-color);
-  background-color: transparent;
-}
-
-@media (prefers-color-scheme: dark) {
-  a {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-a:hover {
-  border-bottom-width: 0.4em;
-  border-bottom-color: var(--color-accent);
-  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 .current {
   flex: 1;
   border-bottom-width: 0.4em;
   border-bottom-color: oklch(85% 5% 210);
-}
-
-form {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1em;
-}
-
-label {
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: 1 / -1;
-}
-
-input {
-  font: inherit;
-}
-
-textarea {
-  font: inherit;
-}
-
-button {
-  font: inherit;
-  display: grid;
-  grid-template-columns: auto;
-  grid-column: 1 / -1;
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-}
-
-.projects article {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  gap: 1em;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.projects h2 {
-  margin: 0;
 }
 
 .theme-switcher {
@@ -141,4 +52,37 @@ button {
   margin: 0;
   font-size: 1em;
   color: inherit;
+}
+
+[data-theme='light'] body {
+  background-color: var(--background-color-light);
+  color: black;
+}
+
+[data-theme='light'] a {
+  background-color: transparent;
+  border-bottom-color: var(--border-color-light);
+}
+
+[data-theme='dark'] body {
+  background-color: var(--background-color-dark);
+  color: white;
+}
+
+[data-theme='dark'] nav {
+  --border-color: var(--border-color-dark);
+}
+
+[data-theme='dark'] a {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+a:hover {
+  border-bottom-width: 0.4em;
+  border-bottom-color: var(--color-accent);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
+
+[data-theme='light'] a:hover {
+  background-color: color-mix(in oklch, var(--color-accent-light-hover), canvas 85%); /* Light mode hover color */
 }
