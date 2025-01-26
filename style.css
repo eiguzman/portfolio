@@ -1,12 +1,12 @@
 html {
+  --border-color-light: oklch(45% 4% 145);
+  --border-color-dark: oklch(65% 4% 145);
+  --color-accent-light-hover: oklch(90% 0.075 145);
+  --color-accent-dark-hover: oklch(40% 0.075 145);
+  --background-color-light: rgb(255, 255, 255);
+  --background-color-dark: rgb(0, 0, 0);
   --color-accent: oklch(63% 0.16 145);
-  --color-accent-light-hover: oklch(63% 0.16 145 / 0.1); /* Light highlight color for light mode */
   accent-color: var(--color-accent);
-  color-scheme: light dark;
-  --border-color-light: oklch(50% 10% 200 / 40%);
-  --border-color-dark: oklch(20% 10% 200 / 40%);
-  --background-color-light: white;
-  --background-color-dark: black;
 }
 
 body {
@@ -15,12 +15,11 @@ body {
   margin-inline: auto;
   padding: 0 30px;
   background-color: var(--background-color-light);
-  color: black;
+  color: black
 }
 
 nav {
   display: flex;
-  --border-color: var(--border-color-light);
 }
 
 a {
@@ -32,36 +31,27 @@ a {
   margin-bottom: 10px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: var(--border-color);
+  border-bottom-color: var(--border-color-light);
+}
+
+a:hover {
+  border-bottom-width: 0.4em;
+  border-bottom-color: var(--color-accent);
+  background-color: var(--color-accent-light-hover);
 }
 
 .current {
   flex: 1;
   border-bottom-width: 0.4em;
-  border-bottom-color: oklch(85% 5% 210);
+  border-bottom-color: var(--border-color-light);
 }
 
 .theme-switcher {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1000;
-}
-
-.theme-switcher label {
-  margin: 0;
-  font-size: 1em;
-  color: inherit;
-}
-
-[data-theme='light'] body {
-  background-color: var(--background-color-light);
-  color: black;
-}
-
-[data-theme='light'] a {
-  background-color: transparent;
-  border-bottom-color: var(--border-color-light);
+  top: 1rem;
+  right: 1rem;
+  font-size: .8rem;
+  font-family: inherit;
 }
 
 [data-theme='dark'] body {
@@ -69,20 +59,6 @@ a {
   color: white;
 }
 
-[data-theme='dark'] nav {
-  --border-color: var(--border-color-dark);
-}
-
-[data-theme='dark'] a {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-a:hover {
-  border-bottom-width: 0.4em;
-  border-bottom-color: var(--color-accent);
-  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-}
-
-[data-theme='light'] a:hover {
-  background-color: color-mix(in oklch, var(--color-accent-light-hover), canvas 85%); /* Light mode hover color */
+[data-theme='dark'] a:hover {
+  background-color: var(--color-accent-dark-hover)
 }
