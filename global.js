@@ -18,15 +18,21 @@ const currentUrl = location.href;
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
-    let displayUrl = p.displayUrl;
+    let displayUrl = p.displayUrl || title;
     if (!ARE_WE_HOME && !url.startsWith('http') && url.startsWith('portfolio')) {
         url = '/' + url;
     } else if (!ARE_WE_HOME && !url.startsWith('http')) {
         url = '../' + url;
     }
+    
     let a = document.createElement('a');
     a.href = url;
     a.textContent = displayUrl;
+
+    if (url.startsWith('https://github.com')) {
+        a.setAttribute('target', '_blank');
+    }
+
     nav.append(a);
     a.classList.toggle(
         'current',
