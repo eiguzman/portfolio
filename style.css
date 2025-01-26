@@ -1,6 +1,16 @@
-body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
+body{
+  max-width: 100ch;
+  margin-inline: auto;
+  padding-left: 30px;
+  padding-right: 30px;
   }
+nav{
+  display:contents;
+  display: flex;
+}
+.current{
+  flex: 1;
+}
+.redir{
+  flex: 1
+}
