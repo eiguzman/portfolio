@@ -13,7 +13,7 @@ body {
   position: relative;
   max-width: 100ch;
   margin-inline: auto;
-  padding: 0 30px;
+  padding: 30px 30px;
   background-color: var(--background-color-light);
   color: black
 }
@@ -21,6 +21,22 @@ body {
 nav {
   display: flex;
   margin-top: 3rem;
+}
+
+h1{
+  font-size: 3em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+h2{
+  font-size: 2em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+h3{
+  font-size: 1.5em;
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
 a {
@@ -39,6 +55,46 @@ a:hover {
   border-bottom-width: 0.4em;
   border-bottom-color: var(--color-accent);
   background-color: var(--color-accent-light-hover);
+}
+
+form{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+form label{
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  input{
+    font: inherit;
+  }
+  textarea{
+    font: inherit;
+  }
+}
+form button{
+  font: inherit;
+  display: grid;
+  grid-template-columns: auto;
+  grid-column: 1 / -1;
+}
+
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  & article{
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 1em;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  & h2{
+    margin: 0;
+  }
 }
 
 .current {
