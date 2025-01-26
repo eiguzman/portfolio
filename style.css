@@ -1,34 +1,59 @@
-html{
+html {
   --color-accent: oklch(63% 0.16 145);
   accent-color: var(--color-accent);
   color-scheme: light dark;
+  --border-color-light: oklch(50% 10% 200 / 40%);
+  --border-color-dark: oklch(20% 10% 200 / 40%);
+  --background-color-light: white;
+  --background-color-dark: black;
 }
-body{
+
+body {
   max-width: 100ch;
   margin-inline: auto;
   padding-left: 30px;
-  padding-right: 30px;}
-h1{
+  padding-right: 30px;
+  background-color: var(--background-color-light);
+  color: black; /* Default text color for light mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-color-dark);
+    color: white; /* Default text color for dark mode */
+  }
+}
+
+h1 {
   font-size: 4em;
   line-height: 1.1;
   text-wrap: balance;
 }
-h2{
+
+h2 {
   font-size: 2em;
   line-height: 1.1;
   text-wrap: balance;
 }
-h3{
+
+h3 {
   font-size: 1.5em;
   line-height: 1.1;
   text-wrap: balance;
 }
-nav{
-  --border-color: oklch(50% 10% 200 / 40%);
-  --border-curr-color: oklch(40% 40% 200 / 40%);
-  display:contents;
-  display: flex;}
-a{
+
+nav {
+  display: flex;
+  --border-color: var(--border-color-light); /* Default border color */
+}
+
+@media (prefers-color-scheme: dark) {
+  nav {
+    --border-color: var(--border-color-dark); /* Dark mode border color */
+  }
+}
+
+a {
   flex: 1;
   text-decoration: none;
   color: inherit;
@@ -38,50 +63,68 @@ a{
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--border-color);
+  background-color: transparent; /* Default background color */
 }
-a:hover{
+
+@media (prefers-color-scheme: dark) {
+  a {
+    background-color: rgba(255, 255, 255, 0.1); /* Dark mode background color */
+  }
+}
+
+a:hover {
   border-bottom-width: 0.4em;
   border-bottom-color: var(--color-accent);
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
-.current{
+
+.current {
   flex: 1;
   border-bottom-width: 0.4em;
-  border-bottom-color: oklch(85% 5% 210);}
-form{
+  border-bottom-color: oklch(85% 5% 210);
+}
+
+form {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1em;
 }
-label{
+
+label {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: 1 / -1;
 }
-input{
+
+input {
   font: inherit;
 }
-textarea{
+
+textarea {
   font: inherit;
 }
-button{
+
+button {
   font: inherit;
   display: grid;
   grid-template-columns: auto;
   grid-column: 1 / -1;
 }
-.projects{
+
+.projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  & article{
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 3;
-    gap: 1em;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  & h2{
-    margin: 0;
-  }
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.projects h2 {
+  margin: 0;
 }

@@ -1,45 +1,33 @@
-console.log('IT’S ALIVE!');
-
 function $$(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
+    return Array.from(context.querySelectorAll(selector));
 }
 
 let pages = [
-    { url: 'https://eiguzman.github.io/portfolio/', title: 'Home' },
-    { url: 'portfolio/projects/index.html', title: 'Projects' },
-    { url: 'portfolio/contact/index.html', title: 'Contact' },
-    { url: 'https://github.com', title: 'GitHub' },
-    { url: 'portfolio/contact/cv.html', title: 'CV' },
+    { url: 'https://github.io/portfolio/', title: 'Home', displayUrl: 'https://github.io/portfolio/' },
+    { url: 'portfolio/projects/index.html', title: 'Projects', displayUrl: 'https://github.io/portfolio/projects' },
+    { url: 'portfolio/contact/index.html', title: 'Contact', displayUrl: 'https://github.io/portfolio/contact' },
+    { url: 'https://github.com', title: 'GitHub', displayUrl: 'https://github.com' },
+    { url: 'portfolio/contact/cv.html', title: 'CV', displayUrl: 'https://github.io/portfolio/contact/cv.html' },
 ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
-
 let nav = document.createElement('nav');
 document.body.prepend(nav);
-
 const currentUrl = location.href;
 
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
-
-    if (currentUrl === 'https://github.io/portfolio/' && url === 'portfolio/projects/index.html') {
-        url = 'https://github.io/portfolio/projects/index.html';
-    } else if (currentUrl === 'https://github.io/portfolio/projects/index.html' && url === 'portfolio/contact/index.html') {
-        url = 'https://github.io/portfolio/contact/index.html';
-    }
-
+    let displayUrl = p.displayUrl;
     if (!ARE_WE_HOME && !url.startsWith('http') && url.startsWith('portfolio')) {
         url = '/' + url;
     } else if (!ARE_WE_HOME && !url.startsWith('http')) {
         url = '../' + url;
     }
-
     let a = document.createElement('a');
     a.href = url;
-    a.textContent = title;
+    a.textContent = displayUrl; // Use displayUrl for the text content
     nav.append(a);
-
     a.classList.toggle(
         'current',
         a.host === location.host && a.pathname === location.pathname
@@ -51,8 +39,24 @@ document.body.insertAdjacentHTML(
     `
       <label class="color-scheme">
           Theme:
-          <select>
-              <!-- TODO add <option> elements here -->
+          <select id="theme-selector">
+              <option value="default">System Default</option>
+              <option value="light">Light Mode</option>
+              <option value="dark">Dark Mode</option>
           </select>
       </label>`
 );
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+}
+
+const savedTheme = localStorage.getItem('theme') || 'default';
+applyTheme(savedTheme);
+const themeSelector = document.getElementById('theme-selector');
+themeSelector.value = savedTheme;
+themeSelector.addEventListener('change', function() {
+    const selectedTheme = this.value;
+    applyTheme(selectedTheme);
+    localStorage.setItem('theme', selectedTheme);
+});
