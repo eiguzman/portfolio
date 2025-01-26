@@ -15,18 +15,6 @@
         <a href="https://github.com/eiguzman" target="_blank">GitHub</a>
         <a href="https://eiguzman.github.io/portfolio/contact/cv.html">CV</a>
     </nav>
-
-    <script type="module">
-        function $$(selector, context = document) {
-            return Array.from(context.querySelectorAll(selector));
-        }
-        let navLinks = $$('nav a');
-        let currentLink = navLinks.find(
-            (a) => a.host === location.host && a.pathname === location.pathname
-        );
-        currentLink?.classList.add('current');
-    </script>
-
     <h1>Contact</h1>
     <form action=mailto:eiguzman@ucsd.edu method="post" enctype="text/plain">
         <label>Email:<input type="email" name="email"></label>

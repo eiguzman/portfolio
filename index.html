@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script type="module" src="./global.js"></script>
+    <script>const ARE_WE_HOME = document.documentElement.classList.contains('home')</script>
     <title>Edgar Guzman: Personal site and portfolio</title>
 </head>
 <body>
@@ -15,18 +16,6 @@
         <a href="https://github.com/eiguzman" target="_blank">GitHub</a>
         <a href="https://eiguzman.github.io/portfolio/contact/cv.html">CV</a>
     </nav>
-
-    <script type="module">
-        function $$(selector, context = document) {
-            return Array.from(context.querySelectorAll(selector));
-        }
-        let navLinks = $$('nav a');
-        let currentLink = navLinks.find(
-            (a) => a.host === location.host && a.pathname === location.pathname
-        );
-        currentLink?.classList.add('current');
-    </script>
-
     <h1>Edgar Guzman</h1>
     <p1>A 4th year UC San Diego student majoring in Data Science, I aspire to improve my experience working in the field of data science, 
         from predictive analysis using ANNs to computer vision programs.</p1>
