@@ -9,18 +9,19 @@ html {
 }
 
 body {
+  position: relative;
   max-width: 100ch;
   margin-inline: auto;
   padding-left: 30px;
   padding-right: 30px;
   background-color: var(--background-color-light);
-  color: black; /* Default text color for light mode */
+  color: black;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--background-color-dark);
-    color: white; /* Default text color for dark mode */
+    color: white;
   }
 }
 
@@ -44,12 +45,12 @@ h3 {
 
 nav {
   display: flex;
-  --border-color: var(--border-color-light); /* Default border color */
+  --border-color: var(--border-color-light);
 }
 
 @media (prefers-color-scheme: dark) {
   nav {
-    --border-color: var(--border-color-dark); /* Dark mode border color */
+    --border-color: var(--border-color-dark);
   }
 }
 
@@ -63,12 +64,12 @@ a {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--border-color);
-  background-color: transparent; /* Default background color */
+  background-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
   a {
-    background-color: rgba(255, 255, 255, 0.1); /* Dark mode background color */
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -127,4 +128,17 @@ button {
 
 .projects h2 {
   margin: 0;
+}
+
+.theme-switcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.theme-switcher label {
+  margin: 0;
+  font-size: 1em;
+  color: inherit;
 }

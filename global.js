@@ -3,11 +3,11 @@ function $$(selector, context = document) {
 }
 
 let pages = [
-    { url: 'https://github.io/portfolio/', title: 'Home', displayUrl: 'https://github.io/portfolio/' },
-    { url: 'portfolio/projects/index.html', title: 'Projects', displayUrl: 'https://github.io/portfolio/projects' },
-    { url: 'portfolio/contact/index.html', title: 'Contact', displayUrl: 'https://github.io/portfolio/contact' },
-    { url: 'https://github.com', title: 'GitHub', displayUrl: 'https://github.com' },
-    { url: 'portfolio/contact/cv.html', title: 'CV', displayUrl: 'https://github.io/portfolio/contact/cv.html' },
+    { url: 'https://eiguzman.github.io/portfolio/', title: 'Home'},
+    { url: 'portfolio/projects/index.html', title: 'Projects'},
+    { url: 'portfolio/contact/index.html', title: 'Contact'},
+    { url: 'https://eiguzman.github.com', title: 'GitHub'},
+    { url: 'portfolio/contact/cv.html', title: 'CV'},
 ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
@@ -37,14 +37,16 @@ for (let p of pages) {
 document.body.insertAdjacentHTML(
     'afterbegin',
     `
-      <label class="color-scheme">
-          Theme:
-          <select id="theme-selector">
-              <option value="default">System Default</option>
-              <option value="light">Light Mode</option>
-              <option value="dark">Dark Mode</option>
-          </select>
-      </label>`
+      <div class="theme-switcher">
+          <label class="color-scheme">
+              Theme:
+              <select id="theme-selector">
+                  <option value="default">System Default</option>
+                  <option value="light">Light Mode</option>
+                  <option value="dark">Dark Mode</option>
+              </select>
+          </label>
+      </div>`
 );
 
 function applyTheme(theme) {
