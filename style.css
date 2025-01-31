@@ -121,9 +121,18 @@ form button{
   z-index: 1000;
 }
 
+[data-theme='dark'] h1, h2, h3, h4, h5, h6 {
+  color: rgb(255, 255, 255);
+}
+
 [data-theme='dark'] a {
   font: inherit;
-  color: rgb(255, 255, 255);
+  color: oklch(45% 0.12 145);
+}
+
+[data-theme='dark'] a:hover {
+  font: inherit;
+  color: oklch(63% 0.12 145);
 }
 
 [data-theme='dark'] body {
