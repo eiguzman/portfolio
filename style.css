@@ -39,9 +39,18 @@ h3{
   text-wrap: balance;
 }
 
-a {
+a{
+  color: oklch(63% 0.12 145);
+}
+
+a:hover{
+  color: oklch(45% 0.12 145)
+}
+
+.top-bar {
   flex: 1;
   text-decoration: none;
+  font: inherit;
   color: inherit;
   text-align: center;
   padding: 0.5em;
@@ -51,7 +60,7 @@ a {
   border-bottom-color: var(--border-color-light);
 }
 
-a:hover {
+.top-bar:hover {
   border-bottom-width: 0.4em;
   border-bottom-color: var(--color-accent);
   background-color: var(--color-accent-light-hover);
@@ -112,11 +121,16 @@ form button{
   z-index: 1000;
 }
 
+[data-theme='dark'] a {
+  font: inherit;
+  color: rgb(255, 255, 255);
+}
+
 [data-theme='dark'] body {
   background-color: var(--background-color-dark);
   color: white;
 }
 
-[data-theme='dark'] a:hover {
+[data-theme='dark'] .top-bar:hover {
   background-color: var(--color-accent-dark-hover)
 }
