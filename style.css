@@ -1,6 +1,6 @@
 html {
-  --border-color-light: oklch(45% 4% 145);
-  --border-color-dark: oklch(65% 4% 145);
+  --border-color-light: oklch(45% 5% 145);
+  --border-color-dark: oklch(65% 5% 145);
   --color-accent-light-hover: oklch(90% 0.075 145);
   --color-accent-dark-hover: oklch(40% 0.075 145);
   --background-color-light: rgb(255, 255, 255);
@@ -62,8 +62,6 @@ a:hover{
 
 .top-bar:hover {
   border-bottom-width: 0.4em;
-  border-bottom-color: var(--color-accent);
-  background-color: var(--color-accent-light-hover);
 }
 
 form{
@@ -138,6 +136,11 @@ form button{
 [data-theme='dark'] body {
   background-color: var(--background-color-dark);
   color: white;
+}
+
+[data-theme='dark'] .top-bar {
+  font: inherit;
+  color : rgb(255, 255, 255)
 }
 
 [data-theme='dark'] .top-bar:hover {
