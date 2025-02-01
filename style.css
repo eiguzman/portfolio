@@ -5,8 +5,9 @@ html {
   --color-accent-dark-hover: oklch(40% 0.075 145);
   --background-color-light: rgb(255, 255, 255);
   --background-color-dark: rgb(0, 0, 0);
-  --color-accent: oklch(63% 0.16 145);
-  accent-color: var(--color-accent);
+  --color-accent-light: oklch(63% 0.16 145);
+  --color-accent-dark: oklch(43% 0.16 145);
+  accent-color: var(--color-accent-light);
 }
 
 body {
@@ -40,11 +41,11 @@ h3{
 }
 
 a{
-  color: oklch(63% 0.12 145);
+  color: var(--color-accent-light);
 }
 
 a:hover{
-  color: oklch(45% 0.12 145)
+  color: var(--color-accent-dark)
 }
 
 .top-bar {
@@ -53,15 +54,18 @@ a:hover{
   font: inherit;
   color: inherit;
   text-align: center;
-  padding: 0.5em;
-  margin-bottom: 10px;
+  padding: .5em;
+  margin-bottom: 1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--border-color-light);
 }
 
 .top-bar:hover {
-  border-bottom-width: 0.4em;
+  border-bottom-width: .4em;
+  padding-bottom: .1em;
+  border-bottom-color: var(--color-accent-light);
+  background-color: var(--color-accent-light-hover);
 }
 
 form{
@@ -119,18 +123,39 @@ form button{
   z-index: 1000;
 }
 
-[data-theme='dark'] h1, h2, h3, h4, h5, h6 {
+[data-theme='dark'] h1 {
   color: rgb(255, 255, 255);
 }
 
+[data-theme='dark'] h2 {
+  color: rgb(255, 255, 255);
+}
+
+[data-theme='dark'] h3 {
+  color: rgb(255, 255, 255);
+}
+
+[data-theme='dark'] h4 {
+  color: rgb(255, 255, 255);
+}
+
+[data-theme='dark'] h5 {
+  color: rgb(255, 255, 255);
+}
+
+[data-theme='dark'] h6 {
+  color: rgb(255, 255, 255);
+}
+
+
 [data-theme='dark'] a {
   font: inherit;
-  color: oklch(45% 0.12 145);
+  color: var(--color-accent-dark);
 }
 
 [data-theme='dark'] a:hover {
   font: inherit;
-  color: oklch(63% 0.12 145);
+  color: var(--color-accent-light);
 }
 
 [data-theme='dark'] body {
@@ -145,4 +170,8 @@ form button{
 
 [data-theme='dark'] .top-bar:hover {
   background-color: var(--color-accent-dark-hover)
+}
+
+[data-theme='dark'] .current {
+  border-bottom-color: var(--border-color-dark);
 }
