@@ -166,11 +166,11 @@ form button{
 [data-theme='dark'] .top-bar {
   font: inherit;
   border-bottom-color: var(--border-color-dark);
-  color : rgb(255, 255, 255)
+  color : rgb(255, 255, 255);
 }
 
 [data-theme='dark'] .top-bar:hover {
-  background-color: var(--color-accent-dark-hover)
+  background-color: var(--color-accent-dark-hover);
 }
 
 [data-theme='dark'] .current {
