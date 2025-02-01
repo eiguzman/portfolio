@@ -62,8 +62,8 @@ a:hover{
 }
 
 .top-bar:hover {
-  border-bottom-width: .4em;
-  padding-bottom: .1em;
+  border-bottom-width: 0.4em;
+  padding-bottom: 0.1em;
   border-bottom-color: var(--color-accent-light);
   background-color: var(--color-accent-light-hover);
 }
@@ -110,6 +110,7 @@ form button{
 
 .current {
   flex: 1;
+  padding-bottom: 0.1em;
   border-bottom-width: 0.4em;
   border-bottom-color: var(--border-color-light);
 }
@@ -121,6 +122,11 @@ form button{
   font-size: .8rem;
   font-family: inherit;
   z-index: 1000;
+}
+
+[data-theme='dark'] body {
+  background-color: var(--background-color-dark);
+  color: white;
 }
 
 [data-theme='dark'] h1 {
@@ -147,7 +153,6 @@ form button{
   color: rgb(255, 255, 255);
 }
 
-
 [data-theme='dark'] a {
   font: inherit;
   color: var(--color-accent-dark);
@@ -158,13 +163,9 @@ form button{
   color: var(--color-accent-light);
 }
 
-[data-theme='dark'] body {
-  background-color: var(--background-color-dark);
-  color: white;
-}
-
 [data-theme='dark'] .top-bar {
   font: inherit;
+  border-bottom-color: var(--border-color-dark);
   color : rgb(255, 255, 255)
 }
 
