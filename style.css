@@ -170,6 +170,7 @@ form button{
 }
 
 [data-theme='dark'] .top-bar:hover {
+  border-bottom-color: var(--color-accent-dark);
   background-color: var(--color-accent-dark-hover);
 }
 
