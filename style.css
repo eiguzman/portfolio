@@ -63,6 +63,7 @@ a:hover{
 }
 
 .top-bar:hover {
+  font-weight: bold;
   border-bottom-width: 0.4em;
   padding-bottom: 0.1em;
   border-bottom-color: var(--color-accent-light);
@@ -108,11 +109,26 @@ ul {
     gap: 1em;
     margin-left: 5px;
     margin-right: 5px;
+    padding-bottom: 25px;
   }
   & h2{
     margin: 0;
   }
 }
+
+.desc {
+  position: relative; /* Ensure the div is positioned relative for absolute children */
+}
+
+.year {
+  font-family: Cambria;
+  position: absolute;
+  bottom: 1px;
+  margin-bottom: 0px;
+}
+
+
+
 
 .current {
   flex: 1;
@@ -211,6 +227,7 @@ ul {
 }
 
 [data-theme='dark'] .top-bar:hover {
+  font-weight: bold;
   border-bottom-color: var(--color-accent-dark);
   background-color: var(--color-accent-dark-hover);
 }

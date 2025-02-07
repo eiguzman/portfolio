@@ -5,11 +5,11 @@ function $$(selector, context = document) {
 }
 
 let pages = [
-    { url: 'https://eiguzman.github.io/portfolio/', title: 'Home'},
-    { url: 'portfolio/projects/index.html', title: 'Projects'},
-    { url: 'portfolio/contact/index.html', title: 'Contact'},
+    { url: 'index.html', title: 'Home'},
+    { url: 'projects/index.html', title: 'Projects'},
+    { url: 'contact/index.html', title: 'Contact'},
     { url: 'https://github.com/eiguzman', title: 'GitHub'},
-    { url: 'portfolio/contact/cv.html', title: 'CV'},
+    { url: 'contact/cv.html', title: 'CV'},
 ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
@@ -92,7 +92,11 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
         article.innerHTML = `
         <${headingLevel}>${proj.title}</${headingLevel}>
         <img src="${proj.image}" alt="${proj.title}">
+        <div class="desc">
         <p>${proj.description}</p>
+        <br>
+        <p class="year">c. ${proj.year}</p>
+        </div>
         `;
         containerElement.appendChild(article);
     });
