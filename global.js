@@ -22,15 +22,9 @@ for (let p of pages) {
     let title = p.title;
     let displayUrl = p.displayUrl || title;
     if (ARE_WE_HOME && p.class == "Home") {
-        console.log("we are home");
-        console.log(url);
         url = './' + url;
-        console.log(url);
     } else if (!ARE_WE_HOME && !url.startsWith('http')) {
-        console.log("We are not home and url does not start with http");
-        console.log(url);
         url = '../' + url;
-        console.log(url);
     }
     
     let a = document.createElement('a');
