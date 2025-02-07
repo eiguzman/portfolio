@@ -5,14 +5,14 @@ function $$(selector, context = document) {
 }
 
 let pages = [
-    { url: 'index.html', title: 'Home'},
+    { url: 'index.html', title: 'Home', class: 'Home'},
     { url: 'projects/index.html', title: 'Projects'},
     { url: 'contact/index.html', title: 'Contact'},
     { url: 'https://github.com/eiguzman', title: 'GitHub'},
     { url: 'contact/cv.html', title: 'CV'},
 ];
 
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
+const ARE_WE_HOME = document.documentElement.classList.contains('Home');
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 const currentUrl = location.href;
@@ -21,10 +21,16 @@ for (let p of pages) {
     let url = p.url;
     let title = p.title;
     let displayUrl = p.displayUrl || title;
-    if (!ARE_WE_HOME && !url.startsWith('http') && url.startsWith('portfolio')) {
+    if (ARE_WE_HOME && p.class == "Home") {
+        console.log("we are home");
+        console.log(url);
         url = './' + url;
+        console.log(url);
     } else if (!ARE_WE_HOME && !url.startsWith('http')) {
+        console.log("We are not home and url does not start with http");
+        console.log(url);
         url = '../' + url;
+        console.log(url);
     }
     
     let a = document.createElement('a');
