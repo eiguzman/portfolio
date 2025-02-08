@@ -117,7 +117,7 @@ ul {
 }
 
 .desc {
-  position: relative; /* Ensure the div is positioned relative for absolute children */
+  position: relative;
 }
 
 .year {
@@ -126,9 +126,6 @@ ul {
   bottom: 1px;
   margin-bottom: 0px;
 }
-
-
-
 
 .current {
   flex: 1;
@@ -152,33 +149,71 @@ ul {
 
 #profile-stats {
   display: grid;
-  grid-template-rows: repeat(2, 1fr); /* 2 rows */
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 10px; /* Space between grid items */
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
   margin: 20px;
 }
 
 #profile-stats dl {
-  display: contents; /* Allow <dl> to be a direct child of the grid */
+  display: contents;
 }
 
 #profile-stats dt {
   font-weight: bold;
-  grid-column: span 1; /* Each <dt> takes 1 column */
+  grid-column: span 1;
 }
 
 #profile-stats dd {
   margin: 0;
-  grid-column: span 1; /* Each <dd> takes 1 column */
+  grid-column: span 1;
 }
 
-/* Additional styles to ensure correct layout */
 #profile-stats dt:nth-child(odd) {
-  grid-row: 1; /* Place <dt> in the first row */
+  grid-row: 1;
 }
 
 #profile-stats dd:nth-child(odd) {
-  grid-row: 2; /* Place <dd> in the second row */
+  grid-row: 2;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: .6fr 1fr;
+  align-items: center;
+}
+
+#projects-plot {
+  width: 100%;
+  max-width: 20em;
+  min-width: 10em;
+  margin-block: 2em;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+  margin: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--border-color-light);
+  list-style-type: none;
+  min-width: 9em;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: var(--color);
+  margin-right: .5em;
 }
 
 [data-theme='dark'] body {
@@ -234,4 +269,8 @@ ul {
 
 [data-theme='dark'] .current {
   border-bottom-color: var(--border-color-dark);
+}
+
+[data-theme='dark'] .legend {
+  border-color: var(--border-color-dark);
 }
