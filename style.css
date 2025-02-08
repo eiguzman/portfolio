@@ -188,6 +188,23 @@ ul {
   max-width: 20em;
   min-width: 10em;
   margin-block: 2em;
+  &:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.selected{
+  --color: var(--color-accent-light) !important;
+  &:is(path) {
+    fill: var(--color);
+  }
 }
 
 .legend {
@@ -214,6 +231,12 @@ ul {
   border-radius: 50%;
   background-color: var(--color);
   margin-right: .5em;
+}
+
+.searchBar{
+  min-width: 330px;
+  width: 100%;
+  margin: 20px;
 }
 
 [data-theme='dark'] body {
