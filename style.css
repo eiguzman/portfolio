@@ -242,6 +242,21 @@ path {
   margin: 20px;
 }
 
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+  margin: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--border-color-light);
+  min-width: 9em;
+  & li {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+  }
+}
+
 [data-theme='dark'] body {
   background-color: var(--background-color-dark);
   color: white;
