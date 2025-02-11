@@ -36,9 +36,7 @@ function renderPieChart(projectsGiven, year="") {
     let colors = d3.scaleOrdinal(["#4269d0","#efb118","#ff725c","#6cc5b0","#ff8ab7","#a463f2","#97bbf5","#9c6b4e","#9498a0"]);
     d3.select('svg').selectAll('*').remove();
     d3.select('.legend').selectAll('*').remove();
-    
     let svg = d3.select('svg');
-
     arcs.forEach((arc, i) => {
         svg.append('path')
             .attr('d', arc)
@@ -60,13 +58,12 @@ function renderPieChart(projectsGiven, year="") {
                 renderProjects(filteredProjects, projectsContainer, 'h2');
             });
     });
-
     let legend = d3.select('.legend');
     data.forEach((d, idx) => {
         legend.append('li')
             .attr('style', `--color:${colors(idx)}`)
             .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`)
-            .attr('class', d.label === selectedYear ? 'selected' : ''); // Highlight legend based on year
+            .attr('class', d.label === selectedYear ? 'selected' : '');
     });
 }
 

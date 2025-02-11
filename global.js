@@ -7,9 +7,10 @@ function $$(selector, context = document) {
 let pages = [
     { url: 'index.html', title: 'Home', class: 'Home'},
     { url: 'projects/index.html', title: 'Projects'},
-    { url: 'contact/index.html', title: 'Contact'},
-    { url: 'https://github.com/eiguzman', title: 'GitHub'},
     { url: 'contact/cv.html', title: 'CV'},
+    { url: 'contact/index.html', title: 'Contact'},
+    { url: 'meta/index.html', title: 'Meta'},
+    { url: 'https://github.com/eiguzman', title: 'GitHub'},
 ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains('Home');
@@ -26,15 +27,12 @@ for (let p of pages) {
     } else if (!ARE_WE_HOME && !url.startsWith('http')) {
         url = '../' + url;
     }
-    
     let a = document.createElement('a');
     a.href = url;
     a.textContent = displayUrl;
-
     if (url.startsWith('https://github.com')) {
         a.setAttribute('target', '_blank');
     }
-
     nav.append(a);
     a.classList.add('top-bar')
     a.classList.toggle(

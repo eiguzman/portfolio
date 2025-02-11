@@ -25,27 +25,29 @@ nav {
   margin-top: 3rem;
 }
 
-h1{
+h1 {
   font-size: 3em;
   line-height: 1.1;
   text-wrap: balance;
 }
-h2{
+
+h2 {
   font-size: 2em;
   line-height: 1.1;
   text-wrap: balance;
 }
-h3{
+
+h3 {
   font-size: 1.5em;
   line-height: 1.1;
   text-wrap: balance;
 }
 
-a{
+a {
   color: var(--color-accent-light);
 }
 
-a:hover{
+a:hover {
   color: var(--color-accent-dark)
 }
 
@@ -70,13 +72,13 @@ a:hover{
   background-color: var(--color-accent-light-hover);
 }
 
-form{
+form {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1em;
 }
 
-form label{
+form label {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: 1 / -1;
@@ -87,7 +89,8 @@ form label{
     font: inherit;
   }
 }
-form button{
+
+form button {
   font: inherit;
   display: grid;
   grid-template-columns: auto;
@@ -99,7 +102,7 @@ ul {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.projects{
+.projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   & article{
@@ -111,7 +114,7 @@ ul {
     margin-right: 5px;
     padding-bottom: 25px;
   }
-  & h2{
+  & h2 {
     margin: 0;
   }
 }
@@ -200,7 +203,7 @@ path {
   cursor: pointer;
 }
 
-.selected{
+.selected {
   --color: var(--color-accent-light) !important;
   &:is(path) {
     fill: var(--color);
@@ -233,7 +236,7 @@ path {
   margin-right: .5em;
 }
 
-.searchBar{
+.searchBar {
   min-width: 330px;
   width: 100%;
   margin: 20px;

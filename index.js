@@ -1,10 +1,13 @@
 import { fetchJSON, renderProjects, fetchGitHubData } from './global.js';
+
 const projects = await fetchJSON('./lib/projects.json');
 const latestProjects = projects.slice(0, 3);
 const projectsContainer = document.querySelector('.projects');
-renderProjects(latestProjects, projectsContainer, 'h3');
 const githubData = await fetchGitHubData('eiguzman');
 const profileStats = document.querySelector('#profile-stats');
+
+renderProjects(latestProjects, projectsContainer, 'h3');
+
 if (profileStats) {
     profileStats.innerHTML = `
           <dl>
@@ -14,4 +17,4 @@ if (profileStats) {
             <dt>Following:</dt><dd>${githubData.following}</dd>
           </dl>
       `;
-  }
+    }
