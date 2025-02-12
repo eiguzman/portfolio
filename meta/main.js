@@ -3,12 +3,13 @@ let data = [];
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
       ...row,
-      line: Number(row.line), // or just +row.line
+      line: Number(row.line),
       depth: Number(row.depth),
       length: Number(row.length),
       date: new Date(row.date + 'T00:00' + row.timezone),
       datetime: new Date(row.datetime),
     }));
+    console.log(data);
     displayStats();
   }
 
@@ -57,6 +58,28 @@ function processCommits() {
     dl.append('dd').text(data.length);
   
     // Add total commits
-    dl.append('dt').text('Total commits');
+    dl.append('dt').text('Commits');
     dl.append('dd').text(commits.length);
+
+    // Add total unique projects
+    const uniqueProjects = new Set(data.map(d => d.file));
+    const totalProjects = uniqueProjects.size;
+    dl.append('dt').text('Files');
+    dl.append('dd').text(totalProjects);
+
+    // Add maximum depth
+    const maxDepth = d3.max(data, d => d.depth);
+    dl.append('dt').text('Max Depth');
+    dl.append('dd').text(maxDepth);
+
+    // Add max file length
+    const maxLength = d3.max(data, d => d.length);
+    dl.append('dt').text('Max File Length');
+    dl.append('dd').text(maxLength);
+
+    // Add average file length
+    const totalLength = d3.sum(data, d => d.length);
+    const averageLength = totalLength / data.length;
+    dl.append('dt').text('Average File Length');
+    dl.append('dd').text(averageLength.toFixed(2)); // Show 2 decimal places
   }
