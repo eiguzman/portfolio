@@ -33,7 +33,8 @@ function renderPieChart(projectsGiven, year="") {
     let sliceGenerator = d3.pie().value((d) => d.value);
     let arcData = sliceGenerator(data);
     let arcs = arcData.map((d) => arcGenerator(d));
-    let colors = d3.scaleOrdinal(["#4269d0","#efb118","#ff725c","#6cc5b0","#ff8ab7","#a463f2","#97bbf5","#9c6b4e","#9498a0"]);
+    let colors = d3.scaleOrdinal(
+        ["#4269d0", "#efb118", "#ff725c", "#6cc5b0", "#ff8ab7", "#a463f2"]);
     d3.select('svg').selectAll('*').remove();
     d3.select('.legend').selectAll('*').remove();
     let svg = d3.select('svg');

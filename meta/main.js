@@ -61,25 +61,65 @@ function processCommits() {
     dl.append('dt').text('Commits');
     dl.append('dd').text(commits.length);
 
-    // Add total unique projects
-    const uniqueProjects = new Set(data.map(d => d.file));
-    const totalProjects = uniqueProjects.size;
+    // Add total unique files
+    const uniqueFiles = new Set(data.map(d => d.file));
+    const totalFiles = uniqueFiles.size;
     dl.append('dt').text('Files');
-    dl.append('dd').text(totalProjects);
+    dl.append('dd').text(totalFiles);
 
+    // Add total file length in characters
+    const totalChars = d3.sum(data, d => d.length);
+    dl.append('dt').text('Total Characters');
+    dl.append('dd').text(totalChars);
+
+    // Add max file length
+    const maxLength = d3.max(data, d => d.line);
+    dl.append('dt').text('Max File Length (Lines)');
+    dl.append('dd').text(maxLength);
+
+    // Add average file length
+    const averageLength = data.length / totalFiles;
+    dl.append('dt').text('Avg File Length (Lines)');
+    dl.append('dd').text(averageLength.toFixed(2));
+
+    // Add longest line length
+    const maxLineLength = d3.max(data, d => d.length);
+    dl.append('dt').text('Longest Line Length');
+    dl.append('dd').text(maxLineLength);
+
+    // Add average line characters
+    const averageLineChars = totalChars / data.length;
+    dl.append('dt').text('Avg Line Length');
+    dl.append('dd').text(averageLineChars.toFixed(2));
+    
     // Add maximum depth
     const maxDepth = d3.max(data, d => d.depth);
     dl.append('dt').text('Max Depth');
     dl.append('dd').text(maxDepth);
 
-    // Add max file length
-    const maxLength = d3.max(data, d => d.length);
-    dl.append('dt').text('Max File Length');
-    dl.append('dd').text(maxLength);
+    // Add average depth
+    const averageDepth = d3.mean(data, d => d.depth)
+    dl.append('dt').text('Avg File Depth');
+    dl.append('dd').text(averageDepth.toFixed(2));
 
-    // Add average file length
-    const totalLength = d3.sum(data, d => d.length);
-    const averageLength = totalLength / data.length;
-    dl.append('dt').text('Average File Length');
-    dl.append('dd').text(averageLength.toFixed(2)); // Show 2 decimal places
+    // Add most frequent day
+    const workByDay = d3.rollups(
+      data,
+      (v) => v.length,
+      (d) => d.date.toLocaleString('en', { weekday: 'long' })
+    );
+    const maxDay = d3.greatest(workByDay, (d) => d[1])?.[0];
+    dl.append('dt').text('Most Frequent Day');
+    dl.append('dd').text(maxDay);
+
+    // Add most frequent time
+    const workByPeriod = d3.rollups(
+      data,
+      (v) => v.length,
+      (d) => new Date(d.datetime).toLocaleString('en', { dayPeriod: 'short' })
+    );
+    const maxPeriod = d3.greatest(workByPeriod, (d) => d[1])?.[0];
+    dl.append('dt').text('Most Frequent Time');
+    dl.append('dd').text(maxPeriod);
   }
+  
