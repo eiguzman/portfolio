@@ -35,7 +35,7 @@ jobs:
           fetch-depth: '0'
       - name: Run Elocuent
         run: |
-          npx elocuent -d . -o meta/loc.csv
+          npx elocuent -d . -o meta/loc.csv --spaces 2
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
