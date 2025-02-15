@@ -309,6 +309,28 @@ circle:hover {
   transform: scale(1.5);
 }
 
+circle.selected {
+  fill: #ff6b6b;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+#language-breakdown {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 [data-theme='dark'] body {
   background-color: var(--background-color-dark);
   color: white;
@@ -375,4 +397,12 @@ circle:hover {
 [data-theme='dark'] #commit-tooltip {
   background-color: rgba(30, 30, 30, .7);
   box-shadow: 2px 2px 5px #111111;;
+}
+
+[data-theme='dark'] .selection {
+  fill-opacity: 0.3;
+  stroke: white;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
 }
