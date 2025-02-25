@@ -1,74 +1,86 @@
 [
     {
+        "title": "Massachusetts Bicycle Traffic Visualizer",
+        "year": "2025",
+        "image": "../images/Mass_bike.png",
+        "url": "https://eiguzman.github.io/mass-bicycle-visualizer/",
+        "description": "An interactive site that visualizes bicycle traffic in the Greater Boston area."
+    },
+    {
         "title": "Predicting Points Per Game (PPG) Using NBA Performance Metrics",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "This project focuses on developing a supervised learning model designed to predict the Points Per Game (PPG) statistic in the NBA based on a range of other tracked performance metrics."
     },
     {
         "title": "Sentiment Analysis of User-generated Reviews.",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "Through the use of a bag-of-words approach, this system transforms textual data into a structured format that captures the frequency and presence of keywords, enabling it to quantify the overall sentiment expressed in the reviews."
     },
     {
         "title": "A Predictive Analysis of U.S. Power Outage Severity",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "This project aims to reveal patterns, trends, and the limitations of this dataset as well as produce a predictive model to determine if the duration of a power outage can be classified as 'severe'."
     },
     {
         "title": "Examining the Relationship Between Extreme Weather and Power Outages",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "This project analyzes the relationship between the cases of extreme weather, the areas affected in the event, and how frequent these occurrences are."
-    },
-    {
-        "title": "Deleniti ad incidunt accusantium?",
-        "year": "2023",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Dolores unde ratione fugiat, dignissimos blanditiis quis accusamus vero repudiandae nemo labore nobis tempora, explicabo fuga illum. Id dolorum dolores, consectetur vitae rem reprehenderit deleniti eveniet fugiat, nemo asperiores cumque."
     },
     {
         "title": "Facilis deserunt voluptatum veritatis.",
         "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "Aperiam rerum distinctio soluta blanditiis placeat qui odio repellendus tenetur. Fugiat eligendi totam aut beatae facere tempora perferendis quas voluptatem aliquid iste quam, veniam tenetur blanditiis odit voluptatibus qui numquam."
     },
     {
         "title": "Animi, illum laborum? Repudiandae.",
         "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "Eligendi dolorem suscipit nemo placeat voluptates, quasi ipsum modi, quibusdam blanditiis beatae quis itaque officiis nesciunt necessitatibus perspiciatis voluptate quo accusantium voluptas nobis fugiat! Animi minus sit molestias necessitatibus inventore."
     },
     {
         "title": "Laudantium nisi unde ratione!",
         "year": "2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "Est, tenetur! Odio distinctio, ut voluptatem rerum repudiandae iste, facilis laboriosam consequuntur optio impedit, quibusdam nobis dolore architecto. Hic aut inventore quasi autem molestiae! Accusamus saepe dicta mollitia tenetur sint."
     },
     {
         "title": "Voluptas ipsam soluta qui.",
         "year": "2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "Dolore in nobis sapiente harum consequuntur unde distinctio alias quae ea pariatur perspiciatis repellendus fugiat, sit sint commodi error ducimus exercitationem provident nulla, cumque itaque rerum illo veniam voluptate. Asperiores."
     },
     {
         "title": "Animi quasi commodi accusamus.",
         "year": "2021",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "Neque necessitatibus quos suscipit doloribus quis minus reiciendis voluptas fuga, omnis mollitia itaque quam inventore id deserunt error tempora nihil, est sit nostrum quisquam dolorum officiis eveniet voluptatem. Blanditiis, repellat."
     },
     {
         "title": "Blanditiis omnis ex necessitatibus!",
         "year": "2020",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "Laudantium neque iste laborum molestias, ipsa eligendi architecto reiciendis sed totam inventore? Perferendis quam nesciunt aspernatur odio fugit pariatur sequi! Commodi alias quam mollitia ad exercitationem deserunt accusamus et esse."
     },
     {
         "title": "Quidem quia repudiandae dolor!",
-        "year": "2019",
+        "year": "2020",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "",
         "description": "Excepturi quo repellat iste in qui officia doloremque libero! Itaque natus, aspernatur autem nesciunt commodi aliquid nobis aperiam inventore numquam eveniet molestiae ipsum eaque ab. Deleniti fuga a consequuntur labore?"
     }
 ]
