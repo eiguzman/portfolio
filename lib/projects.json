@@ -2,7 +2,7 @@
     {
         "title": "Massachusetts Bicycle Traffic Visualizer",
         "year": "2025",
-        "image": "/images/Mass_bike.png",
+        "image": "images/Mass_bike.png",
         "url": "https://eiguzman.github.io/mass-bicycle-visualizer/",
         "description": "An interactive site that visualizes bicycle traffic in the Greater Boston area."
     },
