@@ -85,8 +85,20 @@ export async function fetchJSON(url) {
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
     containerElement.innerHTML = ''; // Clear previous content
+    let before = '';
+    if (ARE_WE_HOME) {
+        before = "./";
+    } else {
+        before = "../";
+    }
     project.forEach(proj => {
         const article = document.createElement('article');
+        let img_url = "";
+        console.log(proj.image);
+        if (!proj.image.startsWith("https")) {
+            img_url = before.concat("", proj.image);
+        }
+        console.log(img_url);
         const linkContent = proj.url ? 
             `<a href="${proj.url}" target="_blank" rel="noopener noreferrer">${proj.title}</a>` : 
             proj.title;
@@ -94,7 +106,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
         <${headingLevel}>
             ${linkContent}
         </${headingLevel}>
-        <img src="${proj.image}" alt="${proj.title}">
+        <img src="${img_url}" alt="${proj.title}">
         <div class="desc">
             <p>${proj.description}</p>
             <br>
@@ -104,7 +116,6 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
         containerElement.appendChild(article);
     });
 }
-
 
 export async function fetchGitHubData(username) {
     return fetchJSON(`https://api.github.com/users/${username}`);
