@@ -94,11 +94,9 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
     project.forEach(proj => {
         const article = document.createElement('article');
         let img_url = "";
-        console.log(proj.image);
         if (!proj.image.startsWith("https")) {
             img_url = before.concat("", proj.image);
         }
-        console.log(img_url);
         const linkContent = proj.url ? 
             `<a href="${proj.url}" target="_blank" rel="noopener noreferrer">${proj.title}</a>` : 
             proj.title;
