@@ -337,6 +337,17 @@ circle.selected {
   grid-template-columns: repeat(2, 1fr);
 }
 
+#time-filter {
+  flex: 1;
+  align-items: baseline;
+  & input {
+    width: 100%;
+  }
+  & time {
+    margin-left: auto;
+  }
+}
+
 [data-theme='dark'] body {
   background-color: var(--background-color-dark);
   color: white;

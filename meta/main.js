@@ -1,6 +1,9 @@
 let data = [];
 let xScale;
 let yScale;
+let selectedCommits = [];
+let commitProgress = 100;
+let timeScale;
 
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
@@ -11,6 +14,10 @@ async function loadData() {
       date: new Date(row.date + 'T00:00' + row.timezone),
       datetime: new Date(row.datetime),
     }));
+    timeScale = d3.scaleTime()
+      .domain(d3.extent(data, d => d.datetime))
+      .range([0, 100]);
+    console.log(timeScale);
     displayStats();
   }
 
@@ -182,13 +189,15 @@ function createScatterPlot() {
     .attr('fill', 'steelblue')
     .style('fill-opacity', 0.7)
     .on('mouseenter', function (event, commit, d, i) {
-      d3.select(event.currentTarget).style('fill-opacity', 1);
+      d3.select(event.currentTarget).classed("selected", true)
+      .style('fill-opacity', 1);
       updateTooltipContent(commit);
       updateTooltipVisibility(true);
       updateTooltipPosition(event);
     })
     .on('mouseleave', () => {
-      d3.select(event.currentTarget).style('fill-opacity', 0.7);
+      d3.select(event.currentTarget).classed("selected", false)
+      .style('fill-opacity', 0.7);
       updateTooltipContent({});
       updateTooltipVisibility(false);
     });
@@ -228,21 +237,24 @@ function brushSelector() {
 let brushSelection = null;
 
 function brushed(event) {
-  brushSelection = event.selection;
+  let brushSelection = event.selection;
+  selectedCommits = !brushSelection
+    ? []
+    : commits.filter((commit) => {
+        let min = { x: brushSelection[0][0], y: brushSelection[0][1] };
+        let max = { x: brushSelection[1][0], y: brushSelection[1][1] };
+        let x = xScale(commit.datetime);
+        let y = yScale(commit.hourFrac);
+
+        return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+      });
   updateSelection();
   updateSelectionCount();
   updateLanguageBreakdown();
 }
 
 function isCommitSelected(commit) {
-  if (!brushSelection) {
-    return false;
-  }
-  const [[x0, y0], [x1, y1]] = brushSelection;
-  const commitX = xScale(commit.datetime);
-  const commitY = yScale(commit.hourFrac);
-
-  return commitX >= x0 && commitX <= x1 && commitY >= y0 && commitY <= y1;
+  return selectedCommits.includes(commit);
 }
 
 function updateSelection() {
@@ -250,10 +262,6 @@ function updateSelection() {
 }
 
 function updateSelectionCount() {
-  const selectedCommits = brushSelection
-    ? commits.filter(isCommitSelected)
-    : [];
-
   const countElement = document.getElementById('selection-count');
   countElement.textContent = `${
     selectedCommits.length || 'No'
@@ -263,9 +271,6 @@ function updateSelectionCount() {
 }
 
 function updateLanguageBreakdown() {
-  const selectedCommits = brushSelection
-    ? commits.filter(isCommitSelected)
-    : [];
   const container = document.getElementById('language-breakdown');
 
   if (selectedCommits.length === 0) {
@@ -297,3 +302,10 @@ function updateLanguageBreakdown() {
 
   return breakdown;
 }
+
+const timeSlider = document.getElementById('time-slider');
+timeSlider.addEventListener('input', function() {
+  commitProgress = +this.value;
+  const selectedTime = timeScale.invert(commitProgress);
+  document.getElementById('selected-time').textContent = selectedTime.toLocaleString();
+});
