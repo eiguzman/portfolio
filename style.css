@@ -338,8 +338,10 @@ circle.selected {
 }
 
 #time-filter {
+  display: grid;
   flex: 1;
   align-items: baseline;
+  margin: 0 20px;
   & input {
     width: 100%;
   }

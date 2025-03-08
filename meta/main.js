@@ -17,7 +17,6 @@ async function loadData() {
     timeScale = d3.scaleTime()
       .domain(d3.extent(data, d => d.datetime))
       .range([0, 100]);
-    console.log(timeScale);
     displayStats();
   }
 
@@ -122,6 +121,7 @@ function displayStats() {
 }
 
 function createScatterPlot() {
+  d3.select('svg').remove();
   const width = 1000;
   const height = 600;
   const svg = d3
@@ -129,10 +129,12 @@ function createScatterPlot() {
     .append('svg')
     .attr('viewBox', `0 0 ${width} ${height}`)
     .style('overflow', 'visible');
+  const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+  const filteredCommits = sortedCommits.filter(sortedCommits => sortedCommits.datetime < timeScale.invert(commitProgress));
 
   xScale = d3
     .scaleTime()
-    .domain(d3.extent(commits, (d) => d.datetime))
+    .domain(d3.extent(filteredCommits, (d) => d.datetime))
     .range([0, width])
     .nice();
   yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
@@ -156,9 +158,8 @@ function createScatterPlot() {
   const yAxis = d3
     .axisLeft(yScale)
     .tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
-  const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+  const [minLines, maxLines] = d3.extent(filteredCommits, (d) => d.totalLines);
   const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([5, 20]);
-  const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
 
   xScale.range([usableArea.left, usableArea.right]);
   yScale.range([usableArea.bottom, usableArea.top]);
@@ -181,7 +182,7 @@ function createScatterPlot() {
     .call(yAxis);
   dots
     .selectAll('circle')
-    .data(sortedCommits)
+    .data(filteredCommits)
     .join('circle')
     .attr('cx', (d) => xScale(d.datetime))
     .attr('cy', (d) => yScale(d.hourFrac))
@@ -303,9 +304,23 @@ function updateLanguageBreakdown() {
   return breakdown;
 }
 
+let previousCommitCount = 0;
+
 const timeSlider = document.getElementById('time-slider');
 timeSlider.addEventListener('input', function() {
   commitProgress = +this.value;
   const selectedTime = timeScale.invert(commitProgress);
-  document.getElementById('selected-time').textContent = selectedTime.toLocaleString();
+  document.getElementById('selected-time').textContent = selectedTime.toLocaleString({dateStyle: "long", timeStyle: "short"});
+  // Get the updated number of commits based on the current commitProgress
+  const filteredCommits = commits.filter(commit => commit.datetime < timeScale.invert(commitProgress));
+
+  // Check if the number of commits has changed
+  if (filteredCommits.length !== previousCommitCount) {
+    previousCommitCount = filteredCommits.length; // Update the previous count
+    createScatterPlot(); // Update the scatter plot only if the count changes
+    brushSelector();
+    updateSelection();
+    updateSelectionCount();
+    updateLanguageBreakdown();
+    }
 });
