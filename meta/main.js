@@ -9,10 +9,10 @@ let timeScale;
 let previousCommitCount = 0;
 let brushSelection = null;
 let fileTypeColors = d3.scaleOrdinal(d3.schemeTableau10);
-let NUM_ITEMS = 73;
+let NUM_ITEMS;
 let ITEM_HEIGHT = 70;
 let VISIBLE_COUNT = 10;
-let totalHeight = (NUM_ITEMS - 1) * ITEM_HEIGHT;
+let totalHeight;
 
 const scrollContainer = d3.select('#scroll-container');
 const itemsContainer = d3.select('#items-container');
@@ -84,6 +84,10 @@ function processCommits() {
 function displayStats() {
   // Process commits first
   processCommits();
+
+  // Update globals for slider
+  NUM_ITEMS = commits.length;
+  totalHeight = (NUM_ITEMS - 1) * ITEM_HEIGHT;
 
   // Create the dl element
   const dl = d3.select('#stats').append('dl').attr('class', 'stats');
