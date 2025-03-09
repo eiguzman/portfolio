@@ -15,16 +15,23 @@
     <div id="stats"></div>
     <h2>Commits by time of day</h2>
     <!-- Time Filter Section -->
-    <div id="time-filter">
+    <!-- <div id="time-filter">
         <label for="time-slider">Show commits until:</label>
         <input type="range" id="time-slider" min="1" max="101" value=101 />
         <time id="selected-time">Show All</time>
         <em id="any-time" style="display: none;">(any time)</em>
+    </div> -->
+    <div id="scrollytelling">
+        <div id="scroll-container">
+            <div id="spacer"></div>
+            <div id="items-container"></div>
+        </div>
+        <div id="chart-container">
+            <div id="chart"></div>
+            <p id="selection-count">No commits selected</p>
+            <dl id="language-breakdown" class="stats"></dl>
+        </div>
     </div>
-    <dl class="files">
-        
-    </dl>
-    <div id="chart"></div>
     <dl id="commit-tooltip" class="info tooltip">
         <dt>Commit</dt>
         <dd>
@@ -32,9 +39,14 @@
         </dd>
         <dt>Date</dt>
         <dd id="commit-date"></dd>
-        <!-- Add: Time, author, lines edited -->
+        <dt>Time</dt>
+        <dd id="commit-time"></dd>
+        <dt>Author</dt>
+        <dd id="commit-author"></dd>
+        <dt>Lines edited</dt>
+        <dd id="commit-lines"></dd>
     </dl>
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
+    <dl class="files">
+    </dl>
 </body>
 </html>

@@ -1,3 +1,7 @@
+:global(body) {
+  max-width: min(120ch, 80vw);
+}
+
 html {
   font-family: 'Segoe UI';
   --border-color-light: oklch(45% 5% 145);
@@ -264,10 +268,48 @@ path {
   }
 }
 
-#chart {
+#scrollytelling {
+  grid-column: 1 / -1;
   display: grid;
-  margin: 20px;
-  min-width: 9em;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#scroll-container {
+  grid-column: 1;
+  position: relative;
+  width: 95%;
+  height: 350px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+#chart {
+  grid-column: 2;
+}
+
+#spacer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: none; /* transparent */
+  pointer-events: none;
+}
+
+#items-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 80%;
+}
+
+.item {
+  height: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #eee;
 }
 
 .gridlines {
@@ -279,7 +321,7 @@ path {
   border-radius: 3%;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, .7);
-  box-shadow: 2px 2px 5px #888888;;
+  box-shadow: 2px 2px 5px #888888;
 }
 
 dl.info {
@@ -334,8 +376,14 @@ circle.selected {
   animation: marching-ants 2s linear infinite;
 }
 
+#selection-count {
+  margin-bottom: 0;
+}
+
 #language-breakdown {
   grid-template-columns: repeat(2, 1fr);
+  margin: 0;
+  gap: 0;
 }
 
 #time-filter {
