@@ -8,6 +8,7 @@ let highlighted = [];
 let commitProgress = 100;
 let timeScale;
 let previousCommitCount = 0;
+let fileTypeColors = d3.scaleOrdinal(d3.schemeTableau10);
 
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
@@ -318,5 +319,27 @@ timeSlider.addEventListener('input', function() {
     updateSelection();
     updateSelectionCount(highlighted);
     updateLanguageBreakdown(highlighted);
+    let lines = filteredCommits.flatMap((d) => d.lines);
+    let files = [];
+    files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => {
+      return { name, lines };
+    });
+    files = d3.sort(files, (d) => -d.lines.length);
+    d3.select('.files').selectAll('div').remove(); // don't forget to clear everything first so we can re-render
+    let filesContainer = d3.select('.files').selectAll('div').data(files).enter().append('div');
+    filesContainer.append('dt').append('code').text(d => "portfolio/" + d.name); // TODO
+    filesContainer.select('dt').append('small')
+    .text(d => `${d.lines.length} lines`); // Number of lines
+    // Append <dd> for each file and create dots for each line
+    let linesContainer = filesContainer.append('dd');
+    linesContainer.selectAll('div.line')
+    .data(d => d.lines) // Bind lines data
+    .enter()
+    .append('div') // Create a div for each line
+    .attr('class', 'line') // Apply the line class for styling
+    .style('background',  d => fileTypeColors(d.type));
+    console.log(filesContainer);
     }
 });
