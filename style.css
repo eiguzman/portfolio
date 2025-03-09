@@ -293,7 +293,7 @@ path {
   top: 0;
   left: 0;
   width: 100%;
-  background: none; /* transparent */
+  background: none;
   pointer-events: none;
 }
 
@@ -364,7 +364,7 @@ circle.selected {
 
 @keyframes marching-ants {
   to {
-    stroke-dashoffset: -8; /* 5 + 3 */
+    stroke-dashoffset: -8;
   }
 }
 

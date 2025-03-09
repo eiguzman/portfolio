@@ -1,5 +1,3 @@
-console.log('IT’S ALIVE!');
-
 function $$(selector, context = document) {
     return Array.from(context.querySelectorAll(selector));
 }
@@ -14,8 +12,10 @@ let pages = [
 ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains('Home');
+
 let nav = document.createElement('nav');
 document.body.prepend(nav);
+
 const currentUrl = location.href;
 
 for (let p of pages) {
@@ -44,16 +44,16 @@ for (let p of pages) {
 document.body.insertAdjacentHTML(
     'afterbegin',
     `
-      <div class="theme-switcher">
-          <label class="color-scheme">
-              Theme:
-              <select id="theme-selector">
-                  <option value="default">System Default</option>
-                  <option value="light">Light Mode</option>
-                  <option value="dark">Dark Mode</option>
-              </select>
-          </label>
-      </div>`
+    <div class="theme-switcher">
+    <label class="color-scheme">
+    Theme:
+    <select id="theme-selector">
+    <option value="default">System Default</option>
+    <option value="light">Light Mode</option>
+    <option value="dark">Dark Mode</option>
+    </select>
+    </label>
+    </div>`
 );
 
 function applyTheme(theme) {
@@ -61,8 +61,11 @@ function applyTheme(theme) {
 }
 
 const savedTheme = localStorage.getItem('theme') || 'default';
+
 applyTheme(savedTheme);
+
 const themeSelector = document.getElementById('theme-selector');
+
 themeSelector.value = savedTheme;
 themeSelector.addEventListener('change', function() {
     const selectedTheme = this.value;
@@ -73,42 +76,51 @@ themeSelector.addEventListener('change', function() {
 export async function fetchJSON(url) {
     try {
         const response = await fetch(url);
+
         if (!response.ok) {
             throw new Error(`Failed to fetch projects: ${response.statusText}`);
         }
+
         const data = await response.json();
+
         return data; 
+
     } catch (error) {
         console.error('Error fetching or parsing JSON data:', error);
     }
 }
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
-    containerElement.innerHTML = ''; // Clear previous content
+    containerElement.innerHTML = '';
     let before = '';
+
     if (ARE_WE_HOME) {
         before = "./";
     } else {
         before = "../";
     }
+
     project.forEach(proj => {
         const article = document.createElement('article');
+
         let img_url = "";
+
         if (!proj.image.startsWith("https")) {
             img_url = before.concat("", proj.image);
         }
+
         const linkContent = proj.url ? 
-            `<a href="${proj.url}" target="_blank" rel="noopener noreferrer">${proj.title}</a>` : 
-            proj.title;
+        `<a href="${proj.url}" target="_blank" rel="noopener noreferrer">
+        ${proj.title}</a>` : proj.title;
         article.innerHTML = `
         <${headingLevel}>
-            ${linkContent}
+        ${linkContent}
         </${headingLevel}>
         <img src="${img_url}" alt="${proj.title}">
         <div class="desc">
-            <p>${proj.description}</p>
-            <br>
-            <p class="year">c. ${proj.year}</p>
+        <p>${proj.description}</p>
+        <br>
+        <p class="year">c. ${proj.year}</p>
         </div>
         `;
         containerElement.appendChild(article);

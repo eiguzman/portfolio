@@ -1,2 +1,4 @@
 # portfolio
-A DSC106 lab aassignment
+Personal Site and Portfolio showcasing career strengthening projects.
+
+*Originally a DSC106 lab assignment*

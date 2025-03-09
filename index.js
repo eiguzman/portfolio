@@ -9,12 +9,12 @@ const profileStats = document.querySelector('#profile-stats');
 renderProjects(latestProjects, projectsContainer, 'h3');
 
 if (profileStats) {
-    profileStats.innerHTML = `
-          <dl>
-            <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
-            <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
-            <dt>Followers:</dt><dd>${githubData.followers}</dd>
-            <dt>Following:</dt><dd>${githubData.following}</dd>
-          </dl>
-      `;
-    }
+  profileStats.innerHTML = `
+  <dl>
+  <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
+  <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
+  <dt>Followers:</dt><dd>${githubData.followers}</dd>
+  <dt>Following:</dt><dd>${githubData.following}</dd>
+  </dl>
+  `;
+}
