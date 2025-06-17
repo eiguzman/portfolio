@@ -2,14 +2,14 @@
     {
         "title": "Symbolic Music Generation with Variational Autoencoders",
         "year": "2025",
-        "image": "images/gvz-42-QQ6PWLVvPHQ-unsplash.jpg",
+        "image": "images/gvz-42-QQ6PWLVvPHQ-unsplash.png",
         "url": "",
         "description": "This project develops deep learning frameworks to generate symblic music in both conditioned and unconditioned modes. Trained on thousands of copyright-free MIDI files, the goal is to develop structurally sound and audibly appealing piano compositions."
     },
     {
         "title": "Defeating Dengue: A Colombia Health Map",
         "year": "2025",
-        "image": "images/r.png",
+        "image": "images/random-institute-VAETEc17YoU-unsplash.png",
         "url": "https://github.com/eiguzman/colombia-health-map",
         "description": "This project showcases an interactive map of Colombia's municipalities in order to dicover trends and correlations related to a rising spread of dengue fever."
     },
@@ -23,28 +23,28 @@
     {
         "title": "Predicting Points Per Game (PPG) Using NBA Performance Metrics",
         "year": "2024",
-        "image": "images/k.png",
+        "image": "images/karsten-winegeart-RjoeEqy7x7k-unsplash.png",
         "url": "https://github.com/eiguzman/player-stat-predictor",
         "description": "This project focuses on developing a supervised learning model designed to predict the Points Per Game (PPG) statistic in the NBA based on a range of other tracked performance metrics."
     },
     {
         "title": "Sentiment Analysis of User-generated Reviews.",
         "year": "2024",
-        "image": "images/joanna-kosinska-h2O_jHvjfIM-unsplash.jpg",
+        "image": "images/joanna-kosinska-h2O_jHvjfIM-unsplash.png",
         "url": "https://github.com/eiguzman/review-rating-predictor",
         "description": "Through the use of a bag-of-words approach, this system transforms textual data into a structured format that captures the frequency and presence of keywords, enabling it to quantify the overall sentiment expressed in the reviews."
     },
     {
         "title": "A Predictive Analysis of U.S. Power Outage Severity",
         "year": "2024",
-        "image": "images/m.png",
+        "image": "images/michael-pointner-fP5LU1iD5p4-unsplash.png",
         "url": "https://github.com/eiguzman/power-outage-severity",
         "description": "This project aims to reveal patterns, trends, and the limitations of this dataset as well as produce a predictive model to determine if the duration of a power outage can be classified as 'severe'."
     },
     {
         "title": "Examining the Relationship Between Extreme Weather and Power Outages",
         "year": "2024",
-        "image": "images/jens-muller-KHHbCZXlezo-unsplash.jpg",
+        "image": "images/jens-muller-KHHbCZXlezo-unsplash.png",
         "url": "https://github.com/eiguzman/extreme-weather-outages",
         "description": "This project analyzes the relationship between the cases of extreme weather, the areas affected in the event, and how frequent these occurrences are."
     },
