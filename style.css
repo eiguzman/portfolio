@@ -526,3 +526,9 @@ circle.selected {
 [data-theme='dark'] .files dt small{
     color: rgba(255, 255, 255, .7);
 }
+
+#logo {
+  padding: 5px;
+  border-radius: 10%;
+  background-color: white;
+}
