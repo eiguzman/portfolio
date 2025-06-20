@@ -21,7 +21,7 @@
         "description": "An interactive site that visualizes bicycle traffic in the Greater Boston area."
     },
     {
-        "title": "Predicting Points Per Game (PPG) Using NBA Performance Metrics",
+        "title": "Predicting Points Per Game Using NBA Performance Metrics",
         "year": "2024",
         "image": "images/karsten-winegeart-RjoeEqy7x7k-unsplash.png",
         "url": "https://github.com/eiguzman/player-stat-predictor",
@@ -35,11 +35,25 @@
         "description": "Through the use of a bag-of-words approach, this system transforms textual data into a structured format that captures the frequency and presence of keywords, enabling it to quantify the overall sentiment expressed in the reviews."
     },
     {
+        "title": "Bending the Curve: Battery-Powered Electric Locomotives",
+        "year": "2024",
+        "image": "images/pexels-kazu1000-32543746.png",
+        "url": "https://github.com/eiguzman/battery-electric-locomotives",
+        "description": "An academic paper discussing advancements in the transportation industry, with restrictions that conform to and achieve California's carbon emmision goals. To reduce carbon footprint, global temperatures, and increase energy efficiency, this paper proposes a transition to Battery-powered locomotives and infrastructure for passenger and commercial railways."
+    },
+    {
         "title": "Data Farms and 'Seaforestation'",
         "year": "2024",
         "image": "images/pexels-isaacmijangos-12829689.png",
-        "url": "",
+        "url": "https://github.com/eiguzman/data-farms-and-seaforestation",
         "description": "An academic paper discussing climate solutions for energy efficient data centers."
+    },
+    {
+        "title": "Google Play Store Analysis of App Ratings and Installations",
+        "year": "2024",
+        "image": "images/pexels-czapp-arpad-3647289-10774600.png",
+        "url": "https://github.com/eiguzman/play-store-installs-analysis",
+        "description": "A project analyzing the relationship between app ratings and installations in the Google Play Store."
     },
     {
         "title": "A Predictive Analysis of U.S. Power Outage Severity",
@@ -56,31 +70,10 @@
         "description": "This project analyzes the relationship between the cases of extreme weather, the areas affected in the event, and how frequent these occurrences are."
     },
     {
-        "title": "The US Invasion of Panama",
+        "title": "The US Invasion of Panama, 1989",
         "year": "2024",
         "image": "images/panama-4948005_640.png",
         "url": "https://github.com/eiguzman/panama-1989",
         "description": "An academic paper discussing the aftermath of the US invasion of Panama in 1989."
-    },
-    {
-        "title": "Laudantium nisi unde ratione!",
-        "year": "2022",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "url": "",
-        "description": "Est, tenetur! Odio distinctio, ut voluptatem rerum repudiandae iste, facilis laboriosam consequuntur optio impedit, quibusdam nobis dolore architecto. Hic aut inventore quasi autem molestiae! Accusamus saepe dicta mollitia tenetur sint."
-    },
-    {
-        "title": "Voluptas ipsam soluta qui.",
-        "year": "2022",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "url": "",
-        "description": "Dolore in nobis sapiente harum consequuntur unde distinctio alias quae ea pariatur perspiciatis repellendus fugiat, sit sint commodi error ducimus exercitationem provident nulla, cumque itaque rerum illo veniam voluptate. Asperiores."
-    },
-    {
-        "title": "Animi quasi commodi accusamus.",
-        "year": "2021",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "url": "",
-        "description": "Neque necessitatibus quos suscipit doloribus quis minus reiciendis voluptas fuga, omnis mollitia itaque quam inventore id deserunt error tempora nihil, est sit nostrum quisquam dolorum officiis eveniet voluptatem. Blanditiis, repellat."
     }
 ]
