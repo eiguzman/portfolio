@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
     <script type="module" src="../global.js"></script>
     <title>Edgar Guzman: Contact</title>
+    <style>
+        /* Optional: Style to align items nicely */
+        .submit-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between button and logo/label */
+            margin-top: 10px;
+        }
+        .powered-by {
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        /* Optional: Resize the logo if needed */
+        .formspree-logo {
+            height: 20px;
+            width: auto;
+        }
+    </style>
 </head>
 <body>
     <h1>Contact</h1>
-    <form action=mailto:eiguzman@ucsd.edu method="post" enctype="text/plain">
-        <label>Email:<input type="email" name="email"></label>
-        <label>Subject:<input name="subject"></label>
-        <label>Body:<textarea name="body"></textarea></label>
-        <button value="submit">Submit</button>
-    </form> 
+    <form action="https://formspree.io/f/mpwrjjao" method="POST">
+        <label>
+            Email:
+            <input type="email" name="_replyto" required>
+        </label>
+        <label>
+            Subject:
+            <input type="text" name="subject" required>
+        </label>
+        <label>
+            Body:
+            <textarea name="message" required></textarea>
+        </label>
+        <br>
+        <div class="submit-container">
+            <button type="submit">Submit</button>
+            <div class="powered-by">
+                <span>Powered by</span>
+                <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">
+                    <img src="https://formspree.io/img/logo.svg" alt="Formspree Logo" class="formspree-logo" />
+                </a>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
+
+
