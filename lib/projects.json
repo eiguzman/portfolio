@@ -4,7 +4,7 @@
         "year": "2025",
         "image": "images/gvz-42-QQ6PWLVvPHQ-unsplash.png",
         "url": "",
-        "description": "This project develops deep learning frameworks to generate symblic music in both conditioned and unconditioned modes. Trained on thousands of copyright-free MIDI files, the goal is to develop structurally sound and audibly appealing piano compositions."
+        "description": "This project develops deep learning frameworks to generate symbolic music in both conditioned and unconditioned modes. Trained on thousands of copyright-free MIDI files, the goal is to develop structurally sound and audibly appealing piano compositions."
     },
     {
         "title": "Defeating Dengue: A Colombia Health Map",
@@ -35,6 +35,13 @@
         "description": "Through the use of a bag-of-words approach, this system transforms textual data into a structured format that captures the frequency and presence of keywords, enabling it to quantify the overall sentiment expressed in the reviews."
     },
     {
+        "title": "Data Farms and 'Seaforestation'",
+        "year": "2024",
+        "image": "images/pexels-isaacmijangos-12829689.png",
+        "url": "",
+        "description": "An academic paper discussing climate solutions for energy efficient data centers."
+    },
+    {
         "title": "A Predictive Analysis of U.S. Power Outage Severity",
         "year": "2024",
         "image": "images/michael-pointner-fP5LU1iD5p4-unsplash.png",
@@ -49,18 +56,11 @@
         "description": "This project analyzes the relationship between the cases of extreme weather, the areas affected in the event, and how frequent these occurrences are."
     },
     {
-        "title": "Facilis deserunt voluptatum veritatis.",
-        "year": "2023",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "url": "",
-        "description": "Aperiam rerum distinctio soluta blanditiis placeat qui odio repellendus tenetur. Fugiat eligendi totam aut beatae facere tempora perferendis quas voluptatem aliquid iste quam, veniam tenetur blanditiis odit voluptatibus qui numquam."
-    },
-    {
-        "title": "Animi, illum laborum? Repudiandae.",
-        "year": "2023",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "url": "",
-        "description": "Eligendi dolorem suscipit nemo placeat voluptates, quasi ipsum modi, quibusdam blanditiis beatae quis itaque officiis nesciunt necessitatibus perspiciatis voluptate quo accusantium voluptas nobis fugiat! Animi minus sit molestias necessitatibus inventore."
+        "title": "The US Invasion of Panama",
+        "year": "2024",
+        "image": "images/panama-4948005_640.png",
+        "url": "https://github.com/eiguzman/panama-1989",
+        "description": "An academic paper discussing the aftermath of the US invasion of Panama in 1989."
     },
     {
         "title": "Laudantium nisi unde ratione!",
