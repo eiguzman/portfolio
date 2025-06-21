@@ -44,7 +44,7 @@ for (let p of pages) {
 document.body.insertAdjacentHTML(
     'afterbegin',
     `
-    <div class="theme-switcher">
+    <div id="theme-switcher" class="theme-switcher">
     <label class="color-scheme">
     Theme:
     <select id="theme-selector">
