@@ -99,9 +99,14 @@ form button {
   display: grid;
   grid-template-columns: auto;
   grid-column: 1 / -1;
+  cursor: pointer;
 }
 
-ul {
+#coursework {
+  display: grid;
+}
+
+#programs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
