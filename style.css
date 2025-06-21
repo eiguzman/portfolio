@@ -30,6 +30,10 @@ nav {
   margin-top: 3rem;
 }
 
+.toc {
+  margin-top: 1em;
+}
+
 h1 {
   font-size: 3em;
   line-height: 1.1;
