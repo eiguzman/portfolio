@@ -112,6 +112,13 @@ form button {
   grid-template-columns: repeat(4, 1fr);
 }
 
+#lang,
+#professional-skills,
+#hobby {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .intro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -453,6 +460,12 @@ circle.selected {
   border-radius: 50%;
 }
 
+#logo {
+  padding: 5px;
+  border-radius: 10%;
+  background-color: white;
+}
+
 [data-theme='dark'] body {
   background-color: var(--background-color-dark);
   color: white;
@@ -531,10 +544,4 @@ circle.selected {
 
 [data-theme='dark'] .files dt small{
     color: rgba(255, 255, 255, .7);
-}
-
-#logo {
-  padding: 5px;
-  border-radius: 10%;
-  background-color: white;
 }
