@@ -4,7 +4,6 @@ let yScale;
 let selectedCommits = [];
 let sortedCommits = [];
 let filteredCommits = [];
-let commitProgress = 100;
 let timeScale;
 let previousCommitCount = 0;
 let brushSelection = null;
