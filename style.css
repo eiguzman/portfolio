@@ -13,6 +13,7 @@ html {
   --color-accent-light: oklch(63% 0.16 145);
   --color-accent-dark: oklch(43% 0.16 145);
   accent-color: var(--color-accent-light);
+  scroll-behavior: smooth;
 }
 
 body {
