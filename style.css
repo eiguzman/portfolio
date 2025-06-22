@@ -3,7 +3,7 @@
 }
 
 html {
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', -apple-system;
   --border-color-light: oklch(45% 5% 145);
   --border-color-dark: oklch(65% 5% 145);
   --color-accent-light-hover: oklch(90% 0.075 145);
