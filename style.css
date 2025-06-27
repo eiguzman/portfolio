@@ -121,12 +121,17 @@ form button {
 
 .intro {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 6fr 5fr;
+  & p1 {
+    text-align: justify;
+  }
   & #photo {
     width: 60%;
+    min-width: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10%;
   }
 }
 
