@@ -622,3 +622,26 @@ circle.selected {
 [data-theme='dark'] .files dt small{
     color: rgba(255, 255, 255, .7);
 }
+
+@media print, screen and (max-width: 1900px) {
+  header,
+  footer{
+    font-size: 90%;
+  }
+  section{
+    width:520px;
+  }
+}
+
+@media print, screen and (max-width: 1280px) {
+  header{
+    font-size: 60%;
+  }
+  footer{
+    font-size: 60%;
+  }
+  section{
+    font-size:90%;
+    width: 595px;
+  }
+}
