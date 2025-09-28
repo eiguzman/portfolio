@@ -300,7 +300,6 @@ header {
 }
 
 section {
-  min-width: 25em;
   padding-bottom: 1.5em;
   & h3 {
     margin-bottom: 5px;
@@ -643,5 +642,18 @@ circle.selected {
   section{
     font-size:90%;
     width: 595px;
+  }
+}
+
+@media print, screen and (max-width: 440px) {
+  header{
+    font-size: 120%;
+  }
+  footer{
+    grid-template-columns: 1fr;
+    font-size: 120%;
+  }
+  section{
+    width:100%;
   }
 }
