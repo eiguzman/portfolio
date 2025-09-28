@@ -257,7 +257,7 @@ path {
   border-style: solid;
   border-color: var(--border-color-light);
   list-style-type: none;
-  min-width: 9em;
+  /* min-width: 9em; */
 }
 
 .legend li {
@@ -536,6 +536,7 @@ circle.selected {
   background-color: white;
 }
 
+/* Dark Mode Stylesheet */
 [data-theme='dark'] body {
   background-color: var(--background-color-dark);
   color: white;
@@ -622,6 +623,7 @@ circle.selected {
     color: rgba(255, 255, 255, .7);
 }
 
+/* Windows 125% Stylesheet */
 @media print, screen and (max-width: 1900px) {
   header,
   footer{
@@ -632,6 +634,7 @@ circle.selected {
   }
 }
 
+/* Windows 150% Stylesheet */
 @media print, screen and (max-width: 1280px) {
   header{
     font-size: 60%;
@@ -645,7 +648,38 @@ circle.selected {
   }
 }
 
+/* iPhone Stylesheet */
 @media print, screen and (max-width: 440px) {
+  .intro{
+    grid-template-columns: 1fr;
+    grid-template-rows: .7fr 1fr;
+    grid-template-areas:
+      "row2"
+      "row1";
+    & p1{
+      padding: 1em 0;
+      grid-area: row1;
+    }
+    & #photo{
+      width: 80%;
+      grid-area: row2;
+    }
+  }
+  .legend{
+    padding-left: 1em;
+    min-width: 7em;
+  }
+  .searchBar{
+    margin: 20px 0;
+  }
+  .projects{
+    & h2{
+      font-size: 1.7em;
+    }
+    & h3{
+      margin: 0;
+    }
+  }
   header{
     font-size: 120%;
   }
@@ -655,5 +689,21 @@ circle.selected {
   }
   section{
     width:100%;
+    & #programs{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    & #professional-skills{
+      grid-template-columns: 1fr;
+    }
+    & #hobby{
+      grid-template-columns: 1fr;
+    }
+  }
+  #scrollytelling{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .75fr;
+  }
+  .stats{
+    grid-template-columns: 2fr 1fr;
   }
 }
