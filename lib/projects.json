@@ -24,7 +24,7 @@
         "title": "Predicting Points Per Game Using NBA Performance Metrics",
         "year": "2024",
         "image": "images/karsten-winegeart-RjoeEqy7x7k-unsplash.png",
-        "url": "https://github.com/eiguzman/player-stat-predictor",
+        "url": "https://eiguzman.github.io/player-stat-predictor/",
         "description": "This project focuses on developing a supervised learning model designed to predict the Points Per Game (PPG) statistic in the NBA based on a range of other tracked performance metrics."
     },
     {
